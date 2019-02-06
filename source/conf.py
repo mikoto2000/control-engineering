@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Control Engineering Study'
+project = '制御工学勉強メモ'
 copyright = '2019, mikoto2000'
 author = 'mikoto2000'
 
