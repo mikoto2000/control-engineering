@@ -1,0 +1,50 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: mikoto2000/sphinx:1.8.4
+    working_directory: ~/${CIRCLE_PROJECT_REPONAME}
+    steps:
+      - checkout
+      - run:
+          name: Build html
+          command: make html
+      - persist_to_workspace:
+          root: build/html
+          paths:
+            - ./*
+  deploy:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "88:e5:74:e2:c7:38:a1:97:b5:2b:fa:8f:17:28:d8:31"
+      - attach_workspace:
+          at: build/html
+      - run:
+          name: Clone gh-pages
+          command: git clone -b gh-pages git@github.com:mikoto2000/${CIRCLE_PROJECT_REPONAME}.git
+      - run:
+          name: Delete exists file
+          command: rm -rf ${CIRCLE_PROJECT_REPONAME}/*
+      - run:
+          name: Copy build results
+          command: cp -rf build/html/* build/html/.nojekyll build/html/.buildinfo ${CIRCLE_PROJECT_REPONAME}
+      - run:
+          name: Setup git
+          command: cd ${CIRCLE_PROJECT_REPONAME};git config --local user.name "${GIT_USER_NAME}"; git config --local user.email "${GIT_EMAIL_ADDRESS}"
+      - run:
+          name: Git push
+          command: cd ${CIRCLE_PROJECT_REPONAME}; git add ./; git commit --allow-empty -m "From `git log --oneline origin/master -n 1`"; git push
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+
