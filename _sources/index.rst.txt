@@ -11,7 +11,9 @@
    :caption: 目次
 
    はじめての制御工学.rst
+   モデリング.rst
    用語集.rst
+   参考文献.rst
 
 
 Indices and tables

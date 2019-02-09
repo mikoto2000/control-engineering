@@ -17,7 +17,9 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" /> 
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="用語集" href="用語集.html" />
+    <link rel="prev" title="はじめての制御工学" href="はじめての制御工学.html" /> 
   </head><body>
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>制御工学勉強メモ 0.0.1 ドキュメント</span></a></h1>
@@ -26,7 +28,11 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
+        «&#160;&#160;<a href="はじめての制御工学.html">はじめての制御工学</a>
+        &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">コンテンツ</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="用語集.html">用語集</a>&#160;&#160;»
         </p>
 
       </div>
@@ -41,22 +47,32 @@
 <h3>ダンパー<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ダンパーは、速度に比例した抵抗力(粘性減衰係数)を発生する装置。
 急な加減速を抑制するために使うイメージ。</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">課題</p>
-<p class="last">ダンパー系の図をいれる</p>
+<div class="figure" id="id5">
+<img alt="_images/dampar.png" src="_images/dampar.png" />
+<p class="caption"><span class="caption-text">ダンパー系(<a class="reference internal" href="参考文献.html#syscon-2009" id="id4">[SYSCON_2009]</a> の図 3.8 より引用)</span></p>
 </div>
-<div class="math notranslate nohighlight" id="equation-0">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0" title="この数式へのパーマリンク">¶</a></span>\[\begin{split}u(t) - c\dot{x}(t) &amp;= 0 \\
-u(t)               &amp;= c\dot{x}(t) \\
-\frac{u(t)}{c}     &amp;= \dot{x}(t) \\
-\frac{1}{c}u(t)    &amp;= \dot{x}(t)\end{split}\]</div>
 <ul class="simple">
-<li><span class="math notranslate nohighlight">\(u(t)\)</span>: 力</li>
-<li><span class="math notranslate nohighlight">\(x(t)\)</span>: 変位</li>
-<li><span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>: 速度</li>
+<li><span class="math notranslate nohighlight">\(A\)</span>: 今回注目する点</li>
+<li><span class="math notranslate nohighlight">\(u(t)\)</span>: 時刻 <span class="math notranslate nohighlight">\(t\)</span> 時点での、点 <span class="math notranslate nohighlight">\(A\)</span> にかかる力</li>
+<li><span class="math notranslate nohighlight">\(x(t)\)</span>: 時刻 <span class="math notranslate nohighlight">\(t\)</span> 時点での、点 <span class="math notranslate nohighlight">\(A\)</span> の変位</li>
+<li><span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>: 時刻 <span class="math notranslate nohighlight">\(t\)</span> 時点での、点 <span class="math notranslate nohighlight">\(A\)</span> の速度</li>
 <li><span class="math notranslate nohighlight">\(c\)</span>: 粘性減衰係数</li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\dot{x}(t) = \frac{1}{c}u(t)\)</span> から、目標の速度を出すためには、粘性減衰係数に負けないように頑張る必要がある事がわかる。</p>
+<p>「速度に比例する抵抗力を発生する」から、 <a class="reference internal" href="#equation-dampar-1">(1)</a> の式が成り立つ。</p>
+<div class="math notranslate nohighlight" id="equation-dampar-1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-dampar-1" title="この数式へのパーマリンク">¶</a></span>\[\begin{split}u(t) = c\dot{x}(t) \\\end{split}\]</div>
+<p><a class="reference internal" href="#equation-dampar-1">(1)</a> を <a class="reference internal" href="#equation-dampar-2">(2)</a> の通り変形すると、 <a class="reference internal" href="#equation-dampar-3">(3)</a> の式が導ける。</p>
+<div class="math notranslate nohighlight" id="equation-dampar-2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-dampar-2" title="この数式へのパーマリンク">¶</a></span>\[\begin{split}u(t)            &amp;= c\dot{x}(t) \\
+\frac{u(t)}{c}  &amp;= \dot{x}(t) \\
+\frac{1}{c}u(t) &amp;= \dot{x}(t)\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-dampar-3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-dampar-3" title="この数式へのパーマリンク">¶</a></span>\[\dot{x}(t) = \frac{1}{c}u(t)\]</div>
+<p><a class="reference internal" href="#equation-dampar-3">(3)</a> から、目標の速度を出すためには、粘性減衰係数に負けないように頑張る必要がある事がわかる。</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">課題</p>
+<p class="last">ダンパー有り無しで変位がどう変わるかをグラフで表現する。</p>
+</div>
 </div>
 </div>
 </div>
@@ -66,7 +82,11 @@ u(t)               &amp;= c\dot{x}(t) \\
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
+        «&#160;&#160;<a href="はじめての制御工学.html">はじめての制御工学</a>
+        &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">コンテンツ</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="用語集.html">用語集</a>&#160;&#160;»
         </p>
 
       </div>
