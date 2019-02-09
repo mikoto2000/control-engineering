@@ -1,0 +1,79 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>モデリング &#8212; 制御工学勉強メモ 0.0.1 ドキュメント</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>制御工学勉強メモ 0.0.1 ドキュメント</span></a></h1>
+        <h2 class="heading"><span>モデリング</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">コンテンツ</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="id1">
+<h1>モデリング<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>一次系<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h3>ダンパー<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ダンパーは、速度に比例した抵抗力(粘性減衰係数)を発生する装置。
+急な加減速を抑制するために使うイメージ。</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">課題</p>
+<p class="last">ダンパー系の図をいれる</p>
+</div>
+<div class="math notranslate nohighlight" id="equation-0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-0" title="この数式へのパーマリンク">¶</a></span>\[\begin{split}u(t) - c\dot{x}(t) &amp;= 0 \\
+u(t)               &amp;= c\dot{x}(t) \\
+\frac{u(t)}{c}     &amp;= \dot{x}(t) \\
+\frac{1}{c}u(t)    &amp;= \dot{x}(t)\end{split}\]</div>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(u(t)\)</span>: 力</li>
+<li><span class="math notranslate nohighlight">\(x(t)\)</span>: 変位</li>
+<li><span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>: 速度</li>
+<li><span class="math notranslate nohighlight">\(c\)</span>: 粘性減衰係数</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\dot{x}(t) = \frac{1}{c}u(t)\)</span> から、目標の速度を出すためには、粘性減衰係数に負けないように頑張る必要がある事がわかる。</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">コンテンツ</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, mikoto2000.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4 で生成しました。
+    </div>
+  </body>
+</html>
