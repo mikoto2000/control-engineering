@@ -12,19 +12,37 @@
 ダンパーは、速度に比例した抵抗力(粘性減衰係数)を発生する装置。
 急な加減速を抑制するために使うイメージ。
 
-.. todo:: ダンパー系の図をいれる
+.. figure:: ./image/dampar.png
 
-.. math::
+   ダンパー系([SYSCON_2009]_ の図 3.8 より引用)
 
-   u(t) - c\dot{x}(t) &= 0 \\
-   u(t)               &= c\dot{x}(t) \\
-   \frac{u(t)}{c}     &= \dot{x}(t) \\
-   \frac{1}{c}u(t)    &= \dot{x}(t)
-
-- :math:`u(t)`: 力
-- :math:`x(t)`: 変位
-- :math:`\dot{x}(t)`: 速度
+- :math:`A`: 今回注目する点
+- :math:`u(t)`: 時刻 :math:`t` 時点での、点 :math:`A` にかかる力
+- :math:`x(t)`: 時刻 :math:`t` 時点での、点 :math:`A` の変位
+- :math:`\dot{x}(t)`: 時刻 :math:`t` 時点での、点 :math:`A` の速度
 - :math:`c`: 粘性減衰係数
 
-:math:`\dot{x}(t) = \frac{1}{c}u(t)` から、目標の速度を出すためには、粘性減衰係数に負けないように頑張る必要がある事がわかる。
+「速度に比例する抵抗力を発生する」から、 :eq:`dampar_1` の式が成り立つ。
 
+.. math::
+   :label: dampar_1
+
+   u(t) = c\dot{x}(t) \\
+
+:eq:`dampar_1` を :eq:`dampar_2` の通り変形すると、 :eq:`dampar_3` の式が導ける。
+
+.. math::
+   :label: dampar_2
+
+   u(t)            &= c\dot{x}(t) \\
+   \frac{u(t)}{c}  &= \dot{x}(t) \\
+   \frac{1}{c}u(t) &= \dot{x}(t)
+
+.. math::
+   :label: dampar_3
+
+   \dot{x}(t) = \frac{1}{c}u(t)
+
+:eq:`dampar_3` から、目標の速度を出すためには、粘性減衰係数に負けないように頑張る必要がある事がわかる。
+
+.. todo:: ダンパー有り無しで変位がどう変わるかをグラフで表現する。

@@ -1,0 +1,6 @@
+========
+参考文献
+========
+
+.. [SYSCON_2009] `吉田和信, システムと制御入門 <http://www.ecs.shimane-u.ac.jp/~kyoshida/syscon(2009)_rev.pdf>`_
+
